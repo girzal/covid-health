@@ -1,7 +1,7 @@
 <p>login works!</p>
 <div class="container">
-    Username : <input type="text"/>
-    Password : <input type="password"/>
+    Username : <input type="text" [(ngModel)]="username" />
+    Password : <input type="password" [(ngModel)]="password"/>
 
     <button (click)="loginClicked()" >Login</button>
 

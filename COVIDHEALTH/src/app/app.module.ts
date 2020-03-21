@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
+import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { MenuComponent } from './menu/menu.component';
     HomeComponent,
     FooterComponent,
     MenuComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
