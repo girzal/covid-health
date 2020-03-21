@@ -7,7 +7,6 @@ import { LoginserviceService } from '../service/loginservice.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  template:'<app-home [username]="username"></app-home>'
 })
 export class LoginComponent implements OnInit {
   username:String;
