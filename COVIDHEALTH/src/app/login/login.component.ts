@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   loginClicked(){
     console.log("you clicked me")
     if(this.username=='admin' && this.password=='admin'){
-      this.router.navigate(['home',this.username]);
+      this.router.navigate(['/home']);
 
     }else{
       this.router.navigate(['/error']);
