@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';  
 import { RouteConfigLoadEnd, Router } from '@angular/router';
+import { LoginserviceService } from '../service/loginservice.service';
 
 @Component({
   selector: 'app-login',
@@ -11,22 +12,29 @@ import { RouteConfigLoadEnd, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   username:String;
   password:String;
-  constructor(    private router:Router
+  invalidLogin=false;
+  constructor( 
+    private router:Router,
+     private loginservice:LoginserviceService
     ) {
  
   }
-
   ngOnInit(): void {
   }
   
+  loginCheckClicked(){
+if (this.loginservice.authenticate(this.username,this.password))
+{
+  console.log("you clicked me")
+  this.router.navigate(['/home']);
+this.invalidLogin=false;
+  
+}
+   
 
-  loginClicked(){
-    console.log("you clicked me")
-    if(this.username=='admin' && this.password=='admin'){
-      this.router.navigate(['/home']);
-
-    }else{
+    else{
       this.router.navigate(['/error']);
+      this.invalidLogin=true;
     }
 
   }

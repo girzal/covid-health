@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   template:'UserName:{{username}}'
 })
 export class HomeComponent implements OnInit {
-@Input()username:string;
+@Input() username:string;
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {
