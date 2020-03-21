@@ -5,30 +5,28 @@ import { RouteConfigLoadEnd, Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  template:'<app-home [username]="username"></app-home>'
 })
 export class LoginComponent implements OnInit {
-
+  username:String;
+  password:String;
   constructor(    private router:Router
     ) {
+ 
   }
 
   ngOnInit(): void {
   }
-username:String;
-password:String;
+  
+
   loginClicked(){
     console.log("you clicked me")
-    console.log(this.username)
-    console.log(this.password)
     if(this.username=='admin' && this.password=='admin'){
-
-      this.router.navigate(['/home']);
+      this.router.navigate(['home',this.username]);
 
     }else{
       this.router.navigate(['/error']);
-
-    
     }
 
   }
