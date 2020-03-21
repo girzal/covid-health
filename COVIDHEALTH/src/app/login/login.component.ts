@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormControl } from '@angular/forms';  
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,10 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  loginClicked(){
+    console.log("you clicked me")
   }
 
 }
