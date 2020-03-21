@@ -19,9 +19,11 @@ username:String;
 password:String;
   loginClicked(){
     console.log("you clicked me")
+    console.log(this.username)
+    console.log(this.password)
     if(this.username=='admin' && this.password=='admin'){
 
-      this.router.navigate(['/details']);
+      this.router.navigate(['/home']);
 
     }else{
       this.router.navigate(['/error']);

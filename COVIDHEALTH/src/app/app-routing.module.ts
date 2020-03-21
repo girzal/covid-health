@@ -6,16 +6,17 @@ import { ErrorComponent } from './error/error.component';
 
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   {
     path: 'login',
     component: LoginComponent,
   },
   {
-    path: 'welcome',
+    path: 'home',
     component: HomeComponent,
   },
   {
-    path: 'error',
+    path: '**',
     component: ErrorComponent,
   }
 ];
